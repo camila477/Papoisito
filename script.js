@@ -104,46 +104,50 @@ function crearCielo() {
 }
 
 crearCielo();
-
 // 4. Cambiar Mensajes del Botón
 const mensajes = [
-    "Gracias por estar a mi lado, por cada risa, cada abrazo y cada momento compartido. Te amo muchísimo Mariana .",
-    "Eres mi lugar favorito en todo el mundo. ",
-    "Quiero seguir haciéndote sonreír todos los días ",
-    "Cada día a tu lado es mi día favorito. ",
-    "Aunque no todo sea perfecto , prometo dar todo de mi para hacerte feliz.",
-    "Eres la coinicidencia mas bonita que me ha pasado",
-    "Te amo mi papoisito",
-    "Gracias por estar a mi lado Mariana"
-
-    
+    "Gracias por estar a mi lado, por cada risa, cada abrazo y cada momento compartido. Te amo muchísimo Mariana.",
+    "Eres mi lugar favorito en todo el mundo.",
+    "Quiero seguir haciéndote sonreír todos los días.",
+    "Cada día a tu lado es mi día favorito.",
+    "Aunque no todo sea perfecto, prometo dar todo de mí para hacerte feliz.",
+    "Eres la coincidencia más bonita que me ha pasado.",
+    "Te amo mi papoisito.",
+    "Gracias por estar a mi lado Mariana."
 ];
+
+let indiceMensaje = 0;
+
+function cambiarMensaje() {
+    indiceMensaje = (indiceMensaje + 1) % mensajes.length;
+    document.getElementById('secret-message').innerText = mensajes[indiceMensaje];
+}
+// Mostrar ramito + flores cayendo
 function mostrarRamitoYFlores() {
-    // 1. Mostrar el ramito
+    // Mostrar el ramito
     document.getElementById('ramito-container').classList.add('activo');
-
-    // 2. Lanzar flores cayendo
+    
+    // Lanzar flores
     const flores = ['🌸', '🌺', '💮', '🌷', '🌹', '💐', '🌻', '🌼'];
-
-    for (let i = 0; i < 50; i++) {
+    
+    for (let i = 0; i < 45; i++) {
         const flor = document.createElement('div');
         flor.classList.add('flower');
         flor.innerText = flores[Math.floor(Math.random() * flores.length)];
-
+        
         flor.style.left = Math.random() * 100 + 'vw';
-
+        
         const tamaño = Math.random() * 18 + 18;
         flor.style.fontSize = tamaño + 'px';
-
+        
         const duracion = Math.random() * 3 + 3.5;
-        const retraso = Math.random() * 1.5;
-
+        const retraso = Math.random() * 1.8;
+        
         flor.style.animationDuration = duracion + 's';
         flor.style.animationDelay = retraso + 's';
-
+        
         document.body.appendChild(flor);
-
-        // Eliminar la flor cuando termine de caer
+        
         setTimeout(() => {
             flor.remove();
         }, (duracion + retraso) * 1000);
