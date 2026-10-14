@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mi papoisito</title>
+    <!-- Fuentes elegantes de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Pantalla de Candado por Fecha -->
+    <div id="lock-screen" class="lock-screen">
+        <div class="lock-card">
+            <h2>Acceso</h2>
+            <p>Ingresa la fecha en que nos volvimos novias :</p>
+            <input type="password" id="fecha-input" placeholder="Fecha" autocomplete="off">
+            <button onclick="verificarFecha()">Desbloquear</button>
+            <p id="error-msg" class="error-msg"></p>
+        </div>
+    </div>
+
+    <!-- Fondo de Estrellas y Galaxia -->
+    <div class="sky-container"></div>
+
+    <!-- Contenido Principal -->
+    <main class="main-content hidden-content" id="main-content">
+
+        <!-- Encabezado -->
+        <header class="hero">
+            <h1>Para mi papoisito</h1>
+            <p class="subtitle">Cada segundo a tu lado es especial</p>
+        </header>
+
+        <!-- Contador -->
+        <section class="counter-container">
+            <h2>Llevamos juntas:</h2>
+            <div id="timer">
+                <div>
+                    <span id="days">0</span>
+                    <p>Días</p>
+                </div>
+                <div>
+                    <span id="hours">0</span>
+                    <p>Horas</p>
+                </div>
+                <div>
+                    <span id="minutes">0</span>
+                    <p>Minutos</p>
+                </div>
+                <div>
+                    <span id="seconds">0</span>
+                    <p>Segundos</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mensaje -->
+        <section class="letter-section">
+            <h2>Un mensaje para ti</h2>
+            <div class="card">
+                <p id="secret-message">Gracias por estar a mi lado, por cada risa, cada abrazo y cada momento compartido. Te amo muchísimo.</p>
+                <button onclick="cambiarMensaje()">Toca aquí</button>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE FOTITOS -->
+        <section class="photos-section">
+            <h2>Nuestros momentos</h2>
+            <p class="section-subtitle">Algunos de mis momentos favoritos contigo</p>
+            
+            <div class="photos-grid">
+                <!-- IMPORTANTE: usa rutas relativas como "images/fotito1.jpeg" -->
+                <div class="photo-card">
+                    <img src="images/fotito1.jpeg" alt="Foto 1">
+                </div>
+                <div class="photo-card">
+                    <img src="images/fotito2.jpeg" alt="Foto 2">
+                </div>
+                <div class="photo-card">
+                    <img src="images/fotito3.jpeg" alt="Foto 3">
+                </div>
+                <div class="photo-card">
+                    <img src="images/fotito4.jpeg" alt="Foto 4">
+                </div>
+                <div class="photo-card">
+                    <img src="images/fotito5.jpeg" alt="Foto 5">
+                </div>
+                <div class="photo-card">
+                    <img src="images/fotito6.jpeg" alt="Foto 6">
+                </div>
+                <div class="photo-card">
+                    <img src="images/fotito7.jpeg" alt="Foto 7">
+                </div>
+                <div class="photo-card">
+                    <img src="images/fotito8.jpeg" alt="Foto 8">
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE CANCIONES -->
+        <section class="songs-section">
+            <h2>Estas Canciones son para ti</h2>
+            <p class="section-subtitle">Cada vez que escucho estas canciones no puedo evitar pensar en ti</p>
+            
+            <div class="songs-list">
+                <div class="song-card">
+                    <div class="song-info">
+                        <h3>Brillo Mio</h3>
+                        <p>Caloncho</p>
+                    </div>
+                    <a href="https://open.spotify.com/intl-es/track/7eCDfoEl8UGeWqcpRO5lgz?si=3fabb8d2af5d4d78" target="_blank" class="play-btn">▶</a>
+                </div>
+
+                <div class="song-card">
+                    <div class="song-info">
+                        <h3>Say Yes to Heaven</h3>
+                        <p>Lana del Rey</p>
+                    </div>
+                    <a href="https://open.spotify.com/..." target="_blank" class="play-btn">▶</a>
+                </div>
+
+                <div class="song-card">
+                    <div class="song-info">
+                        <h3>Love</h3>
+                        <p>Lana Del Rey</p>
+                    </div>
+                    <a href="https://open.spotify.com/intl-es/track/2Kerz9H9IejzeIpjhDJoYG?si=8baebe8d7d47484a" target="_blank" class="play-btn">▶</a>
+                </div>
+
+                <div class="song-card">
+                    <div class="song-info">
+                        <h3>Beso</h3>
+                        <p>Josean Log</p>
+                    </div>
+                    <a href="https://open.spotify.com/intl-es/track/4PpuZIMmeng6qPicveSI22?si=d28faa0d4a244651" target="_blank" class="play-btn">▶</a>
+                </div>
+
+                <div class="song-card">
+                    <div class="song-info">
+                        <h3>Palmar</h3>
+                        <p>Caloncho</p>
+                    </div>
+                    <a href="https://open.spotify.com/intl-es/track/06FhHrnpYCmIxIxIGUehxQ?si=514250563e904425" target="_blank" class="play-btn">▶</a>
+                </div>
+
+                <div class="song-card">
+                    <div class="song-info">
+                        <h3>Te amo</h3>
+                        <p>Los Mier</p>
+                    </div>
+                    <a href="https://open.spotify.com/intl-es/track/5N6l5fBKD1XcbayM3Q8K3c?si=9d349204bee34b02" target="_blank" class="play-btn">▶</a>
+                </div>
+
+                <div class="song-card">
+                    <div class="song-info">
+                        <h3>Combustión</h3>
+                        <p>Josean Log</p>
+                    </div>
+                    <a href="https://open.spotify.com/intl-es/track/1zDuB9BuEt9Bm3J8OtKEvq?si=41259fb5860d4859" target="_blank" class="play-btn">▶</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE CARTA -->
+        <section class="letter-big-section">
+            <h2>Una carta para ti</h2>
+            
+            <div class="big-letter">
+                <p>
+                    Hola Mariana <br><br>
+                    Bueno para comenzar es 15 de octubre, hoy hace ya 7 meses tú me pediste que fuera
+                    tu novia y yo te dije que sí. Para mí en su momento no era una decisión fácil porque 
+                    yo no sabía ni siquiera todo lo que significa e implica tener pareja, pero a pesar del miedo
+                    o de la incertidumbre tú me enseñaste lo lindo que es amar a una persona y al mismo tiempo lo 
+                    maravilloso que es ser amada por ti. Creo que tú y yo sabemos que no somos la pareja perfecta, pero
+                    dentro de todo el tiempo que llevamos de relación y de conocernos siento que siempre hemos dado lo mejor
+                    de nosotras. Hay muchas cosas que me gustan de nuestra relación: me gusta la química que tenemos, la complicidad,
+                    la atracción que hay entre nosotras; pero por sobre todo de verdad amo el nivel de confianza al que hemos llegado.
+                    Quiero que sepas que me fascinas como persona: tus ojos, tu sonrisa, tu cabello. Amo que seas tan inteligente,
+                    que te encante escuchar música, que seas una persona centrada, una persona tan sensible y que no te dé miedo hablar 
+                    las cosas por más difíciles o incómodas que sean, que seas una persona comprensiva y también paciente.
+                    Quiero aprovechar esta ocasión para hacerte saber que soy muy feliz a tu lado y que tú eres una mujer maravillosa e increíble.
+                    Me siento muy afortunada y feliz de poder decir que tú eres mi novia, mi papoisito. Espero que este sea solo uno de muchos más meses a tu lado.
+                </p>
+                <p class="letter-signature">Con todo mi amor,<br>Camila</p>
+            </div>
+        </section>
+
+       <!-- Botón de ramito -->
+<section class="flowers-section">
+    <button id="flowers-btn" onclick="mostrarRamitoYFlores()">Toca aquí</button>
+</section>
+
+<footer>
+    <p>Hecho con amor especialmente para ti</p>
+</footer>
+
+</main>
+
+<!-- Contenedor del ramito -->
+<div id="ramito-container" class="ramito-container">
+    <div class="ramito-content">
+        <div class="ramo">
+            <span class="flor flor-1">🌸</span>
+            <span class="flor flor-2">🌺</span>
+            <span class="flor flor-3">🌷</span>
+            <span class="ramo-principal">💐</span>
+            <span class="flor flor-4">🌹</span>
+            <span class="flor flor-5">🌼</span>
+            <span class="flor flor-6">💮</span>
+        </div>
+        <p class="ramito-texto">Gracias por estos 7 meses</p>
+        <p class="ramito-subtexto">Te amo muchísimo</p>
+        <button class="cerrar-ramito" onclick="cerrarRamito()">Cerrar</button>
+    </div>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
